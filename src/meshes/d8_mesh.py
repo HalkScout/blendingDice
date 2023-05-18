@@ -1,6 +1,6 @@
 import bpy
 
-def create(mesh_name="mesh.d8.001", obj_name="d8"):
+def create(collection, type="d4"):
     context = bpy.context
     verts = ((10.0, 6.683025360107422, -9.99974536895752),
         (-10.0, -6.683021545410156, 9.999747276306152),
@@ -16,8 +16,9 @@ def create(mesh_name="mesh.d8.001", obj_name="d8"):
         (5, 1, 2),
         (5, 3, 1),
         (5, 0, 3))
-    me = bpy.data.meshes.new(mesh_name)
+    me = bpy.data.meshes.new('mesh.' + type)
     me.from_pydata(verts, [], faces)
-    ob = bpy.data.objects.new(obj_name, me)
-    context.collection.objects.link(ob)
-    context.view_layer.objects.active = ob
+    obj = bpy.data.objects.new(type, me)
+    collection.objects.link(obj)
+    context.view_layer.objects.active = obj
+    return obj
