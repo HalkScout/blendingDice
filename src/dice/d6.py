@@ -16,7 +16,6 @@ class D6(Die):
         ]
 
     def create_mesh(self, collection):
-        context = bpy.context
         verts = ((-10.0, -10.0, -10.0),
             (-10.0, -10.0, 10.0),
             (-10.0, 10.0, -10.0),
@@ -35,5 +34,5 @@ class D6(Die):
         me.from_pydata(verts, [], faces)
         obj = bpy.data.objects.new(self.name, me)
         collection.objects.link(obj)
-        context.view_layer.objects.active = obj
+        bpy.context.view_layer.objects.active = obj
         return obj

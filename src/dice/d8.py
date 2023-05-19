@@ -7,14 +7,14 @@ class D8(Die):
         Die.__init__(self, 'd8', scale=(50, 50, 5), offset=10)
         offset = self.offset
         self.numbers = [
-            ('1_', (0, 0, offset),          (0, 0, 0)),
-            ('2_', (0, -offset, offset/4),  (108, 180, 0)),
-            ('3_', (0, offset, 0),          (56.3, 239, -180)),
-            ('4_', (0, -offset, 0),         (90, -90, 0)),
-            ('5_', (offset, 0, 0),          (0, 90, 0)),
-            ('6_', (offset/2, 0, offset/2),          (0, 0, 0)),
-            ('7_', (0, offset, -offset/6),          (-71.5, 180, 0)),
-            ('8_', (0, 0, -offset),         (180, 0, 0))
+            ('1_', (0, 0, offset), (0, 0, 0)),
+            ('2_', (0, -offset/1.125, offset/3), (108, 180, 0)),
+            ('3_', (-offset/1.5, -offset/2, -offset/3), (60, 125, -90)),
+            ('4_', (-offset/1.5, offset/2, offset/3), (60, -55, -90)),
+            ('5_', (offset/1.5, -offset/2, -offset/3), (240, -55, -90)),
+            ('6_', (offset/1.5, offset/2, offset/3), (60, 55, 90)),
+            ('7_', (0, offset/1.125, -offset/3), (108, 0, 180)),
+            ('8_', (0, 0, -offset), (180, 0, 0))
         ]
 
     def create_mesh(self, collection):
